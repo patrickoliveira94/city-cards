@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400")
+
+body
+  font-family: Open Sans, Verdana, sans-serif
+  
 .container
   display: flex
   justify-content: center
@@ -6,11 +11,13 @@
   margin: 86px auto
 
 .card
-  background-color: black
+  position: relative
+  display: flex
   border-radius: 8px
   margin: 10px
   overflow: hidden
   background-color: rgba(85,85,85,0.4)
+  cursor: pointer
 
   &.card--big
     width: 100%
@@ -27,6 +34,52 @@
 
   .card__image
     width: 100%
+    height: 100%
+    object-fit: cover
+
+  .card__overlay
+    position: absolute
+    width: 100%
+    height: 100%
+    background-color: rgba(85,85,85,0.4)
+    display: flex
+    justify-content: center
+    align-items: center
+
+  .card__title
+    position: absolute
+    top: 152px
+    font-size: 14px
+    color: white
+    text-transform: uppercase
+
+  .card__subtitle
+    position: absolute
+    margin: 6px 0 15px
+    font-size: 28px
+    font-weight: bold
+    color: white
+    text-transform: uppercase
+
+  .card__description
+    position: absolute
+    font-size: 16px
+    color: white
+    margin: 10px auto
+    width: 70%
+    text-align: center
+    display: none
+
+  .card__button
+    position: absolute
+    margin-top: 130px
+    background-color: transparent
+    color: white
+    border: 1px solid white
+    border-radius: 5px
+    padding: 10px 20px
+    font-weight: bold
+    cursor: pointer
 
 @media ( max-width: 767px )
 
