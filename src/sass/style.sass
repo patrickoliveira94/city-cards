@@ -68,7 +68,6 @@ body
     margin: 10px auto
     width: 70%
     text-align: center
-    display: none
 
   .card__button
     position: absolute
@@ -82,16 +81,41 @@ body
     cursor: pointer
 
   // Animations
+  .card__description
+    opacity: 0
+
   .card__button
     opacity: 0
 
-  .card__overlay:hover .card__button
-    opacity: 1
-    -webkit-transition: opacity 1s ease-in-out
-    -moz-transition: opacity 1s ease-in-out
-    -ms-transition: opacity 1s ease-in-out
-    -o-transition: opacity 1s ease-in-out
-    transition: opacity 1s ease-in-out
+  .card__overlay
+    
+    &:hover
+
+      .card__title, .card__subtitle
+        -webkit-transform: translate(0, -100px)
+        -moz-transform: translate(0, -100px)
+        transform: translate(0, -100px)
+        -webkit-transition: all 0.5s ease-in-out
+        -moz-transition: all 0.5s ease-in-out
+        transition: all 0.5s ease-in-out
+
+      .card__description
+        opacity: 1
+        -webkit-transform: translate(0, -10px)
+        -moz-transform: translate(0, -10px)
+        transform: translate(0, -10px)
+        -webkit-transition: all 0.5s ease-in-out
+        -moz-transition: all 0.5s ease-in-out
+        transition: all 0.5s ease-in-out
+
+      .card__button
+        opacity: 1
+        -webkit-transition: opacity 1s ease-in-out
+        -moz-transition: opacity 1s ease-in-out
+        -ms-transition: opacity 1s ease-in-out
+        -o-transition: opacity 1s ease-in-out
+        transition: opacity 1s ease-in-out
+
 
 @media ( max-width: 767px )
 
@@ -104,3 +128,7 @@ body
     width: 280px !important
     height: 280px !important
     max-width: initial
+
+    .card__title
+      position: absolute
+      top: 112px
