@@ -81,6 +81,18 @@ body
     font-weight: bold
     cursor: pointer
 
+  // Animations
+  .card__button
+    opacity: 0
+    -webkit-transition: opacity 1s ease-in-out
+    -moz-transition: opacity 1s ease-in-out
+    -ms-transition: opacity 1s ease-in-out
+    -o-transition: opacity 1s ease-in-out
+    transition: opacity 1s ease-in-out
+
+  .card__overlay:hover .card__button
+    opacity: 1
+
 @media ( max-width: 767px )
 
   .container
