@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Cities</title>
   </head>
-  <body>
+  <body class="preload">
     <div class="container">
       <div class="card card--big">
         <img class="card__image" src="assets/images/lagoa.jpg" alt="Lake image">
@@ -93,3 +93,9 @@
     </div>
   </body>
 </html>
+
+<script>
+  window.onload = function() {
+    document.querySelector('body').classList.remove('preload');    
+  };
+</script>
