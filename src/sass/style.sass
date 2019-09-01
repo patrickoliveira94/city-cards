@@ -1,13 +1,34 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400")
 
+=transition($property)
+  -webkit-transition: $property
+  -moz-transition: $property
+  -ms-transition: $property
+  -o-transition: $property
+  transition: $property
+
+=transform($property)
+  -webkit-transform: $property
+  -moz-transform: $property
+  -ms-transform: $property
+  -o-transform: $property
+  transform: $property
+
 body
   font-family: Open Sans, Verdana, sans-serif
 
 .preload *
-  -webkit-transition: none !important
-  -moz-transition: none !important
-  -ms-transition: none !important
-  -o-transition: none !important
+  +transition(none !important)
+  +transform(none !important)
+
+  .card
+
+    .card__overlay
+    
+      &:hover
+
+        .card__button, .card__description
+          opacity: 0
   
 .container
   display: flex
@@ -102,11 +123,7 @@ body
 
   // Animations
   .card__title, .card__subtitle, .card__description, .card__button
-    -webkit-transition: all 0.5s ease-in-out
-    -moz-transition: all 0.5s ease-in-out
-    -ms-transition: all 0.5s ease-in-out
-    -o-transition: all 0.5s ease-in-out
-    transition: all 0.5s ease-in-out
+    +transition(all 0.5s ease-in-out)
 
   .card__description, .card__button
     opacity: 0
@@ -116,25 +133,13 @@ body
     &:hover
 
       .card__title, .card__subtitle, .card__description, .card__button
-        -webkit-transition: all 0.5s ease-in-out
-        -moz-transition: all 0.5s ease-in-out
-        -ms-transition: all 0.5s ease-in-out
-        -o-transition: all 0.5s ease-in-out
-        transition: all 0.5s ease-in-out
+        +transition(all 0.5s ease-in-out)
 
       .card__title, .card__subtitle
-        -webkit-transform: translate(0, -100px)
-        -moz-transform: translate(0, -100px)
-        -ms-transform: translate(0, -100px)
-        -o-transform: translate(0, -100px)
-        transform: translate(0, -100px)
+        +transform(translate(0, -100px))
 
       .card__description
-        -webkit-transform: translate(0, -10px)
-        -moz-transform: translate(0, -10px)
-        -ms-transform: translate(0, -10px)
-        -o-transform: translate(0, -10px)
-        transform: translate(0, -10px)
+        +transform(translate(0, -10px))
 
       .card__button, .card__description
         opacity: 1
@@ -178,27 +183,15 @@ body
 
     // Animations
     .card__title, .card__subtitle, .card__description, .card__button
-      -webkit-transition: none
-      -moz-transition: none
-      -ms-transition: none
-      -o-transition: none
-      transition: none
+      +transition(none !important)
 
     .card__overlay
       
       &:hover
 
         .card__title, .card__subtitle, .card__description, .card__button
-          -webkit-transition: none
-          -moz-transition: none
-          -ms-transition: none
-          -o-transition: none
-          transition: none
-          -webkit-transform: none
-          -moz-transform: none
-          -ms-transform: none
-          -o-transform: none
-          transform: none
+          +transition(none !important)
+          +transform(none !important)
 
         .card__button, .card__description
           opacity: 0
